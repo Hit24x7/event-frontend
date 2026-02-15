@@ -6,7 +6,7 @@ export default function Home() {
   const [qr, setQr] = useState(null);
 
   const submit = async () => {
-    const res = await axios.post("http://192.168.29.241:5000/api/tickets/create", form);
+    const res = await axios.post("https://event-backend-production-cc3a.up.railway.app/api/tickets/create", form);
     setQr(res.data.qrImage);
   };
 
