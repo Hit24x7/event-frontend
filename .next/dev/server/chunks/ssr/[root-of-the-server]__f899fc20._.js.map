@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 12, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/HP/Downloads/Event%20QR%20Scan/frontend/pages/scan.js"],"sourcesContent":["import { Html5QrcodeScanner } from \"html5-qrcode\";\nimport { useEffect } from \"react\";\nimport axios from \"axios\";\n\nexport default function Scan() {\n  useEffect(() => {\n    const scanner = new Html5QrcodeScanner(\"reader\", { fps: 10, qrbox: 250 });\n    scanner.render(async (text) => {\n      const res = await axios.post(\"http://192.168.29.241:5000/api/tickets/validate\", { token: text });\n      alert(res.data.message);\n    });\n  }, []);\n\n  return <div id=\"reader\"></div>;\n}\n"],"names":[],"mappings":";;;;;AAAA;AACA;AACA;;;;;;;;;AAEe,SAAS;IACtB,IAAA,gHAAS,EAAC;QACR,MAAM,UAAU,IAAI,mMAAkB,CAAC,UAAU;YAAE,KAAK;YAAI,OAAO;QAAI;QACvE,QAAQ,MAAM,CAAC,OAAO;YACpB,MAAM,MAAM,MAAM,iKAAK,CAAC,IAAI,CAAC,mDAAmD;gBAAE,OAAO;YAAK;YAC9F,MAAM,IAAI,IAAI,CAAC,OAAO;QACxB;IACF,GAAG,EAAE;IAEL,qBAAO,qKAAC;QAAI,IAAG;;;;;;AACjB"}}]
+}
