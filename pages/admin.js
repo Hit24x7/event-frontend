@@ -5,7 +5,7 @@ export default function Admin() {
   const [tickets, setTickets] = useState([]);
 
   useEffect(() => {
-    axios.get("http://192.168.29.241:5000/api/tickets/all")
+    axios.get("https://event-backend-production-cc3a.up.railway.app/api/tickets/all")
       .then(res => setTickets(res.data));
   }, []);
 
